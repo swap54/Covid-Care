@@ -1,0 +1,56 @@
+doctype html 
+html 
+    head 
+        style 
+            include Register.css 
+    body 
+        div.heading
+            img(src="/logo.png" alt="")
+            h1 Care
+        div.nav
+            a.home(href="/")
+                span Home 
+            a.About(href="#")
+                span Register
+            a.contact(href="resources")
+                span Resources
+            a.collaborate(href="contact")
+                span Contact    
+        div.form
+            -data = data || {}
+
+            if errors 
+                ul 
+                    for error in errors 
+                        li=error.msg
+            h1 Register yourself
+            form(action="." method="POST")
+                label.l1(for="name") Name:
+                input.nm(
+                type="text"
+                id="name"
+                name="name"
+                )
+
+                label.l2(for="email") Email:
+                input.em(
+                type="email"
+                id="email"
+                name="email"
+                )
+
+                label.l3(for="resource") Resource:
+                input.rs(
+                type="resource"
+                id="resource"
+                name="resource"
+                )
+
+                label.l4(for="location") Location:
+                input.loc(
+                type="location"
+                id="location"
+                name="location"
+                )
+
+                input.btn(type="submit" value="Submit")

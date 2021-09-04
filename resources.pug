@@ -1,0 +1,34 @@
+doctype html 
+html 
+    head 
+        style 
+            include resources.css 
+    body 
+        div.heading
+            img(src="/logo.png" alt="")
+            h1 Care
+        div.nav
+            a.home(href="/")
+                span Home 
+            a.About(href="Register")
+                span Register
+            a.contact(href="#")
+                span Resources
+            a.collaborate(href="contact")
+                span Contact
+        div.container
+            if registrations.length
+                table.tb 
+                    tr 
+                        th.l1 Name
+                        th.l2 Email
+                        th.l3 Resource
+                        th.l4 Location
+                    each registration in registrations 
+                        tr 
+                            td=registration.name 
+                            td=registration.email 
+                            td=registration.resource 
+                            td=registration.location
+            else 
+                h3.no No resource available :(   
